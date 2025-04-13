@@ -24,7 +24,7 @@ if (typeof window !== "undefined" && window.localStorage.getItem("offlineEnabled
   });
 }
 
-export default function FirebaseTest() {
+export default function FirebaseTest({ app }) {
   const [value, setValue] = useState("");
 
   useEffect(() => {
@@ -39,5 +39,10 @@ export default function FirebaseTest() {
     return handler;
   }, []);
 
-  return value;
+  return (
+    <>
+      {value}
+      {app}
+    </>
+  );
 }
